@@ -1,0 +1,74 @@
+Registration page:
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.ActionListener;
+public class Registrationpage implements ActionListener
+{
+Frame f=new Frame();
+Label l1,l2,l3,l4,l5;
+TextField t1,t2,t3,t4;
+Button b1,b2,b3;
+public Registrationpage()
+{
+l1=new Label("Username");
+l2=new Label("Email id");
+l3=new Label("Account Number");
+l4=new Label("Fingerprint");
+l5=new Label();
+t1=new TextField();
+t2=new TextField();
+t3=new TextField();
+t4=new TextField();
+t3.setEchoChar('$');
+b1=new Button("Submit");
+f.add(b1);
+f.add(b2);
+f.add(b3);
+f.add(t1);
+f.add(t2);
+f.add(t3);
+f.add(t4);
+f.add(l1);
+f.add(l2);
+f.add(l3);
+f.add(l4);
+f.add(l5);
+f.setSize(700,700);
+f.setVisible(true);
+l1.setBounds(100,50,200,25);
+l2.setBounds(100,150,200,25);
+l3.setBounds(100,250,200,25);
+l4.setBounds(100,350,200,25);
+l5.setBounds(350,500,100,50);
+t1.setBounds(200,50,200,50);
+t2.setBounds(200,150,200,50);
+t3.setBounds(200,250,200,50);
+t4.setBounds(200,350,200,50);
+b1.setBounds(150,650,100,100);
+b2.setBounds(450,400,50,50);
+b3.setBounds(550,400,50,50);
+b1.addActionListener((ActionListener) this);
+b2.addActionListener((ActionListener) this);
+b3.addActionListener((ActionListener) this);
+}
+public void actionPerformed(ActionEvent a)
+{
+if(a.getSource()==b1)
+  {
+l5.setText("Registeration successful");
+}
+else if(a.getSource()==b2)
+{
+new Encryption();
+}
+else if(a.getSource()==b3)
+{
+new Decryption();
+}
+} 
+public static void main(String[] args)
+{
+new Registrationpage();
+}
+}
+   
